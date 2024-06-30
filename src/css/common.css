@@ -1,0 +1,11 @@
+.content {
+  width: 100%;
+  background-color: #fff;
+  /* background-color: pink; */
+}
+
+.content-c {
+  width: 1300px;
+  margin: 0 auto;
+  /* background-color:pink; */
+}

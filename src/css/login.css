@@ -1,0 +1,125 @@
+/*  预设模板样式    定义此界面上经常用到的样式  */
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.13em;
+  color: #fff;
+}
+
+button {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 3px;
+  border-radius: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+input {
+  width: 75%;
+  border-radius: 7px;
+  padding: 10px 15px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.form {
+  float: left;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+/* ==============常规样式============ */
+
+.forms {
+  width: 700px;
+  height: 420px;
+  /* background-color: pink; */
+  /* 下面的6行code也能使 标签水平居中 一般不建议使用 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.forms .switch-login.left {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: rgba(231, 68, 46, 0.9);
+  border-radius: 15px 0 0 15px;
+}
+
+.forms .switch-login.left .btn-login {
+  border: 2px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.forms .form-input.right {
+  padding-top: 60px;
+  padding-bottom: 45px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0 15px 15px 0;
+}
+
+.forms .form-input.right h1 {
+  color: black;
+}
+
+.forms .form-input.right .btn-register {
+  border: 2px solid #fff;
+  background-color: rgba(235, 71, 41);
+}
+
+/* 登陆界面 */
+.forms .form.form-input.left {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px 0 0 15px;
+}
+
+.forms .form.form-input.left h1,
+.forms .form.form-input.left p {
+  color: black;
+}
+
+.forms .form.form-input .btn-login {
+  background-color: rgba(216, 67, 45);
+}
+
+.forms .form.switch-register.right {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -5;
+  padding-top: 90px;
+  padding-bottom: 80px;
+  border-radius: 0 15px 15px 0;
+  background-color: rgba(253, 81, 105, 1);
+  opacity: 0;
+}
+
+.forms .form.switch-register.right .btn-register {
+  border: 2px solid #fff;
+}
+
+box {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 10;
+}

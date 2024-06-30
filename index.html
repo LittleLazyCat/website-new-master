@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Vite App</title>
+    <style>
+      .LoadingComp {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #d1773b;
+        overflow: hidden;
+        z-index: 99999;
+      }
+
+      #loader {
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+      }
+
+      @keyframes loader {
+        0% {
+          left: -100px;
+        }
+
+        100% {
+          left: 110%;
+        }
+      }
+
+      #box {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        animation: animate 0.5s linear infinite;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 3px;
+      }
+
+      @keyframes animate {
+        17% {
+          border-bottom-right-radius: 3px;
+        }
+
+        25% {
+          transform: translateY(9px) rotate(22.5deg);
+        }
+
+        50% {
+          transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+          border-bottom-right-radius: 40px;
+        }
+
+        75% {
+          transform: translateY(9px) rotate(67.5deg);
+        }
+
+        100% {
+          transform: translateY(0) rotate(90deg);
+        }
+      }
+
+      #shadow {
+        width: 50px;
+        height: 5px;
+        background: #000;
+        opacity: 0.1;
+        position: absolute;
+        top: 59px;
+        left: 0;
+        border-radius: 50%;
+        animation: shadow 0.5s linear infinite;
+      }
+
+      @keyframes shadow {
+        50% {
+          transform: scale(1.2, 1);
+        }
+      }
+
+      /* 定义删除时的过渡动画效果 */
+      .LoadingComp {
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+
+      .LoadingComp.LoadingComp-active {
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="LoadingComp">
+      <div id="loader">
+        <div id="shadow"></div>
+        <div id="box"></div>
+      </div>
+    </div>
+
+
+
+    <!-- 测试修改 -->
+    <!-- 测试修改 -->
+
+<!-- 测试修改2 -->
+<!-- 测试修改3 -->
+<!-- 测试修改4 -->
+<!-- 测试修改5 -->
+<!-- 测试 提交和推送6 -->
+
+    <!-- vue实例 -->
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

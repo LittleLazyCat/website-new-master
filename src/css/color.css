@@ -1,0 +1,10 @@
+:root {
+  --subject--Color: rgb(255, 67, 38);
+  --header--bgColor: rgba(0, 0, 0, 0.15);
+
+  --nav--bgColor: rgb(254, 254, 254);
+  --main--bgcColor: rgb(247, 249, 254);
+  --min--width: 800px;
+
+  --toTop: "https://file.poetize.cn/webBackgroundImage/Sara1166096519899721";
+}

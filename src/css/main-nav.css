@@ -1,0 +1,79 @@
+.main-nav {
+  /* 元素水平居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #efeeee; */
+}
+
+.main-nav .container-18 {
+  display: flex;
+  width: 700px;
+  height: 600px;
+  /* 保证间距一样 */
+  justify-content: space-around;
+  /* 每一行多行也能居中剧中 */
+  align-items: center;
+  /* 多了会换行 */
+  flex-wrap: wrap;
+}
+
+/* 书写每一个nav盒子的大小 box里面的元素垂直排列 */
+.main-nav .container-18 .box-18 {
+  /* 弹性盒子 垂直排列 按钮+文字 */
+  display: flex;
+  flex-direction: column;
+  /* 主轴竖着 元素间距相同 + 元素居中  */
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 140px;
+  /* margin: 20px; */
+  cursor: pointer;
+}
+
+.main-nav .container-18 .box-18 .img {
+  /* 依旧使用 弹性布局 让图片在 div.img中居中排列 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  /* 圆角矩形 这个才是 图片的真实所在地 需要圆角矩形 */
+  border-radius: 20px;
+  box-shadow:
+    18px 18px 30px rgba(0, 0, 0, 0.2),
+    -18px -18px 30px rgba(255, 255, 255, 1);
+  transition: all 0.3s ease-out;
+}
+
+.main-nav .container-18 .box-18 .img img {
+  width: 60px;
+  transition: all 0.3s ease-out;
+}
+
+.main-nav .container-18 .box-18 p {
+  color: slategray;
+  font-weight: 600;
+}
+
+.main-nav .container-18 .box-18 .img:hover {
+  /* 按钮的光影动画, div.img盒子被hover,不是img本身   圆角矩形也加给 图片外面的盒子 */
+  /* inset 是内部阴影 默认是外部阴影outset */
+  box-shadow:
+    0 0 0 rgba(0, 0, 0, 0.2),
+    0 0 0 rgba(255, 255, 255, 0.8),
+    inset 18px 18px 30px rgba(0, 0, 0, 0.1),
+    inset -18px -18px 30px rgba(255, 255, 255, 1);
+}
+
+.main-nav .container-18 .box-18 .img:hover img {
+  /* 图标大小动画 */
+  width: 56px;
+}
+
+.main-nav .container-18 .box-18 .img:hover + p {
+  color: #ff6700;
+  opacity: 0.8;
+}

@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.code {
+  margin: 5px 0;
+}
+
+#content {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+#content .content-c {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  /* markdown样式 */
+}
+
+#content .content-c p strong {
+  font-weight: 600;
+}
+
+#content .content-c blockquote {
+  margin: 0;
+  background-color: rgb(240, 237, 224);
+  border-radius: 3px;
+  padding: 5px 10px;
+  position: relative;
+  word-break: break-word;
+  text-align: center;
+}
+
+#content .content-c blockquote p {
+  font-size: 16px;
+}
+
+#content .content-c blockquote:before {
+  content: "\f10d";
+  font-size: 0.7rem;
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  color: orange;
+  font-family: FontAwesome;
+}
+
+#highlightjs {
+  margin: 5px 0;
+}
+
+#content .content-c blockquote:after {
+  content: "\f10e";
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  color: orange;
+  font-family: FontAwesome;
+}
+
+#content .content-c code:not(.hljs) {
+  background: rgb(242, 241, 238);
+  font-size: 0.9rem;
+  color: #e67474;
+  word-break: break-word;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+
+#content .content-c ul {
+  list-style: disc;
+  padding: 0 10px 0 35px;
+  color: var(--articleGreyFontColor);
+  border-radius: 10px;
+}
+
+#content .content-c ol {
+  list-style: decimal;
+  padding: 0 10px 0 35px;
+  color: var(--articleGreyFontColor);
+  border-radius: 10px;
+}
+
+#content .content-c ol li,
+#content .content-c ul li {
+  padding: 1px 0;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+#content .content-c h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #ddd;
+}
+
+#content .content-c h1,
+#content .content-c h2,
+#content .content-c h2,
+#content .content-c h3,
+#content .content-c h4 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#content .content-c h2 {
+  padding-left: 40px;
+}
+
+#content .content-c h3 {
+  padding-left: 20px;
+  font-size: 22px;
+}
+
+#content .content-c h4 {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+#content .content-c h5 {
+  font-size: 18px;
+  padding-left: 28px;
+}
+
+#content .content-c h2:before {
+  content: "🌺";
+  position: absolute;
+  left: 0;
+  font-size: 1.03em;
+  margin-top: -2px;
+}
+
+#content .content-c h3:before {
+  content: "#";
+  left: 0;
+  position: absolute;
+  margin-top: 2px;
+  color: #ff6d6d;
+}
+
+#content .content-c h4:before {
+  content: "▌";
+  left: 0;
+  position: absolute;
+  color: #ff6d6d;
+}
+
+#content .content-c h5:before {
+  content: "🌷";
+  left: 0;
+  position: absolute;
+}
+
+#content .content-c a {
+  color: #e67474;
+  position: relative;
+  text-decoration: none;
+}
+
+#content .content-c a:hover {
+  color: orange;
+}
+
+#content .content-c a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: orange;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#content .content-c a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#content .content-c p {
+  color: var(--articleFontColor);
+  line-height: 35px;
+  word-break: break-word;
+  font-size: 18px;
+}
+
+#content .content-c hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0.5px dashed #fc625d;
+}
+
+#content .content-c img {
+  max-width: 100%;
+  border-radius: 5px;
+}

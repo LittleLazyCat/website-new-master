@@ -1,0 +1,173 @@
+/* 隐藏原始的 单选按钮 */
+#night-switch {
+  display: none;
+}
+
+/*  label  是最外层的框
+        inline元素会阻止 宽高生效, 但是在  flex的布局中变为了 inlin-block */
+.night-switch .switch {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border-radius: 100px;
+  border: 10px solid #50c2df;
+  background-color: #96dcee;
+  transition: all 0.35s ease-in;
+}
+
+/* label::before  是大圆圈 */
+.night-switch .switch::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  border: 5px solid #f5eb71;
+  border-radius: 50%;
+  background-color: #fffaa8;
+  /* 当从checked的状态变为 变为不选中的状态, 执行这段 */
+  animation: switch-reverse 0.35s forwards;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* label:after 黑夜里 月球上的月球坑, 本质是伪元素的 多个阴影 */
+.night-switch .switch::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow:
+    -13px 0 0 2px #e8e8ea,
+    -24px 14px 0 -2px #e8e8ea;
+  /* border: 2px solid black; */
+  position: absolute;
+  left: 143px;
+  top: 23px;
+  /* 初始先隐藏 */
+  opacity: 0;
+}
+
+/* span 白天里面的中间的 "白云" */
+.night-switch .switch span {
+  display: block;
+  width: 10px;
+  height: 5px;
+  background-color: #fff;
+  position: relative;
+  top: 45px;
+  left: 135px;
+  border-radius: 5px;
+  transition: all 0.15s ease-in;
+}
+
+/* 白天的两朵上下 "白云" */
+.night-switch .switch span::before,
+.night-switch .switch span::after {
+  content: "";
+  width: 40px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  /* 从 checked的状态 => 变为 未选中的状态 的过渡 */
+  transition: all 0.15s ease-in;
+}
+
+.night-switch .switch span::before {
+  top: -5px;
+  left: -20px;
+}
+
+.night-switch .switch span::after {
+  top: 5px;
+  left: -10px;
+}
+
+/* ------------------------------ ------------------------------*/
+/* 接下来带 checked 的都是 定义被点击后  该发生什么变化 */
+/* ------------------------------ ----------------------------------*/
+
+/* checked 当单选框处于选中时, checked, 单选框的属性 */
+/* ~ 通用兄弟选择器, 选择后面符合条件的所有兄弟元素 */
+.night-switch input:checked ~ .bgc {
+  /* 点击时 变化背景颜色 */
+  background-color: #808fc7;
+}
+
+/* label 最外层边框的变化  */
+/* + 紧邻选择器  紧挨着的下一个 */
+.night-switch input:checked + label {
+  border-color: #5d6baa;
+  background-color: #6b7abb;
+}
+
+/* label::befor, 里面的圆圈  */
+.night-switch input:checked + label::before {
+  border-color: #e8e8ea;
+  background-color: #fff;
+  /* 定义动画 : 圆圈向右移动 */
+  /* animation: 自定义名 持续时长 forwards就是动画完成后定制100%是的状态*/
+  animation: switch 0.5s forwards;
+}
+
+/* label::after 月球上的黑色阴影显示 */
+.night-switch input:checked + label::after {
+  opacity: 1;
+  /* 延时出现 */
+  transition-delay: 0.25s;
+}
+
+/* 白天的白云 往左移动, 变成黑夜的小点点 */
+.night-switch input:checked + label span {
+  width: 5px;
+  left: 60px;
+}
+
+.night-switch input:checked + label span::before {
+  width: 5px;
+  height: 5px;
+  top: -25px;
+}
+
+.night-switch input:checked + label span::after {
+  width: 5px;
+  height: 5px;
+  top: 20px;
+  left: -30px;
+}
+
+/* 定义动画 选中状态的动画 */
+@keyframes switch {
+  0% {
+    left: 4px;
+  }
+
+  60% {
+    left: 4px;
+    /* 宽度变大 : 中间就有一个椭圆的过渡 */
+    width: 125px;
+  }
+
+  100% {
+    left: 97px;
+  }
+}
+
+/* 定义取消选中状态的动画  */
+@keyframes switch-reverse {
+  0% {
+    left: 104px;
+  }
+
+  60% {
+    left: 72px;
+    width: 112px;
+  }
+
+  100% {
+    left: 4px;
+  }
+}
