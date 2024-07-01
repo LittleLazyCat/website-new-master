@@ -5,6 +5,9 @@ import "@/css/reset.css";
 import "@/css/common.css";
 import "@/css/color.css";
 
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 // 代码高亮主题选一个即可
 import "highlight.js/styles/atom-one-dark.css"; /*黑色主题*/
 
@@ -28,8 +31,7 @@ import router from "./router";
 const app = createApp(App);
 
 // 使用hljs插件
-app.use(hljsVuePlugin);
-
+app.use(hljsVuePlugin); 
 // 使用懒加载组件:  img标签前使用 v-lazy 代替 :src
 app.use(lazyPlugin, {
   loading: new URL("./assets/img/loading.png", import.meta.url).href, // 图片加载时默认图片

@@ -30,6 +30,15 @@ const routes = [
         },
       },
       {
+        path: "/hldp",
+        name: "Hldp",
+        component: () => import("@/views/nurse/hldp.vue"),
+        meta: {
+          title: "护理大屏",
+          headerBgColor: "rgb(62,62,62)", // 不同的界面 导航栏设置不同的颜色
+        },
+      },
+      {
         path: "/articlePage",
         name: "ArticlePage",
         component: () => import("@/views/ArticlePage.vue"),
