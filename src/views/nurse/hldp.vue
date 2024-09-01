@@ -1,5 +1,5 @@
 <template>
-    <div id="List">
+  <div id="List">
     <div class="border" v-for="pokemon in pokemons" :key="pokemon.id">
       <div class="item" :style="{backgroundColor: colors[pokemon.types[0].type.name]}">
         <div class="img-container">
@@ -9,17 +9,7 @@
         <h3>{{pokemon.name}}</h3>
         <small>type: {{pokemon.types[0].type.name}}</small>
       </div>
-    </div>
-    <!-- <div class="border">
-      <div class="item">
-        <div class="img-container">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png">
-        </div>
-        <div class="id">#001</div>
-        <h3>比卡超</h3>
-        <small>type: electric</small>
-      </div>
-    </div> -->
+    </div> 
   </div>
 
 </template>
